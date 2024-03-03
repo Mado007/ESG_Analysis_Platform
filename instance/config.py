@@ -1,1 +1,5 @@
-SECRET_KEY = 'your_secret_key_here'
+import os
+
+# Generate a secret key
+secret_key = os.urandom(24)
+

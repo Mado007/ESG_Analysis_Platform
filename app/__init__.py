@@ -7,7 +7,7 @@ import os
 app = Flask(__name__)
 
 # Load configuration
-app.config.from_pyfile('config.py')
+app.config.from_pyfile('instance/config.py')
 
 # Initialize database
 db = SQLAlchemy(app)
