@@ -5,47 +5,51 @@ body {
   padding: 0;
 }
 
-.login-container,
-.register-container {
-  width: 300px;
-  margin: 100px auto;
+header, main, footer {
+  text-align: center;
+  margin: 20px;
+}
+
+main {
   background-color: #fff;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
-  text-align: center;
-}
-
-.input-group {
-  margin-bottom: 20px;
-}
-
-.input-group label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-.input-group input[type="text"],
-.input-group input[type="password"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+ul {
+  list-style-type: none;
+  padding: 0;
 }
 
 .button {
   background-color: #4CAF50;
   border: none;
   color: white;
-  padding: 15px 32px;
-  text-align: center;
+  padding: 10px 20px;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 10px;
   cursor: pointer;
   border-radius: 5px;
+}
+
+.login-container,
+.register-container {
+  width: 300px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.error {
+  color: #ff0000;
+  font-size: 12px;
 }
