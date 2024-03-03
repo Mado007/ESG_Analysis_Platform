@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form method="post">
+            {{ form.hidden_tag() }}
+            <div class="input-group">
+                {{ form.username.label }} {{ form.username(class="form-control") }}
+            </div>
+            <div class="input-group">
+                {{ form.password.label }} {{ form.password(class="form-control") }}
+            </div>
+            <div class="input-group">
+                {{ form.remember_me() }} {{ form.remember_me.label }}
+            </div>
+            <button type="submit">Sign In</button>
+        </form>
+    </div>
+</body>
+</html>
