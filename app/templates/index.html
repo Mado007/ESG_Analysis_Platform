@@ -3,23 +3,28 @@
 {% block title %}Home - ESG Dashboard{% endblock %}
 
 {% block content %}
-    <h1>Welcome to the ESG Dashboard</h1>
-    <p>This dashboard provides insights into environmental, social, and governance (ESG) data.</p>
-    <p>Explore different metrics, trends, and analyses to make informed decisions.</p>
-    <section>
-        <h2>Key Features</h2>
-        <ul>
-            <li>User Authentication</li>
-            <li>Data Integration and Analysis</li>
-            <li>Interactive Data Visualization</li>
-            <li>Responsive Design</li>
-        </ul>
-    </section>
-    <section>
-        <p>Explore the platform to make informed decisions about sustainability and corporate responsibility.</p>
-        <div class="cta-buttons">
-            <a href="/register" class="button">Sign Up</a>
-            <a href="/login" class="button">Log In</a>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4">Welcome to the ESG Dashboard</h1>
+            <p class="lead">This dashboard provides insights into environmental, social, and governance (ESG) data.</p>
+            <hr class="my-4">
+            <p>Explore different metrics, trends, and analyses to make informed decisions.</p>
+            <h2 class="mt-5">Key Features</h2>
+            <ul class="list-group">
+                <li class="list-group-item">User Authentication</li>
+                <li class="list-group-item">Data Integration and Analysis</li>
+                <li class="list-group-item">Interactive Data Visualization</li>
+                <li class="list-group-item">Responsive Design</li>
+            </ul>
+            <p class="mt-5">Explore the platform to make informed decisions about sustainability and corporate responsibility.</p>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <a href="/register" class="btn btn-primary btn-lg btn-block">Sign Up</a>
+                </div>
+                <div class="col-md-6">
+                    <a href="/login" class="btn btn-secondary btn-lg btn-block">Log In</a>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
 {% endblock %}

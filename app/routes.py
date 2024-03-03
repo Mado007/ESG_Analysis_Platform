@@ -4,6 +4,8 @@ from flask_login import login_user
 from app import app, db
 from app.models import User
 from app.forms import LoginForm 
+import pandas as pd
+import plotly.express as px
 
  # Import the LoginForm class from the forms.py file
 
@@ -11,7 +13,23 @@ from app.forms import LoginForm
 @app.route('/')
 @app.route('/index')
 def index():
-    return render_template('index.html', title='Home')
+    # Create sample data for demonstration
+    df = pd.DataFrame({
+        'Country': ['USA', 'Canada', 'UK', 'Germany', 'France'],
+        'ESG_Score': [80, 75, 70, 85, 78],
+        'Environmental': [85, 80, 75, 90, 82],
+        'Social': [78, 76, 72, 80, 75],
+        'Governance': [82, 79, 76, 88, 80]
+    })
+
+    # Create a bar chart using Plotly
+    fig = px.bar(df, x='Country', y='ESG_Score', title='ESG Scores by Country')
+
+    # Convert the Plotly figure to HTML format
+    plot_html = fig.to_html(full_html=False, default_height=500)
+
+    # Render the index.html template with the Plotly plot embedded
+    return render_template('index.html', plot=plot_html)
 
 # About route
 @app.route('/about')
@@ -47,3 +65,7 @@ def login():
     
     # Render the login form template
     return render_template('login.html', title='Sign In', form=form)
+
+# Run the-app
+if __name__ == '__main__':
+    app.run(debug=True)
