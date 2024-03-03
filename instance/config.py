@@ -1,5 +1,8 @@
 import os
 
 # Generate a secret key
-secret_key = os.urandom(24)
+SECRET_KEY = os.urandom(24)
 
+# Database configuration
+SQLALCHEMY_DATABASE_URI = 'sqlite:///app.db'
+SQLALCHEMY_TRACK_MODIFICATIONS = False

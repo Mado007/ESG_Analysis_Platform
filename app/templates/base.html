@@ -1,10 +1,12 @@
+<!-- app/templates/base.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}ESG Dashboard{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="static\style.css">
     {% block extra_styles %}{% endblock %}
 </head>
 <body>
@@ -24,7 +26,7 @@
     <footer>
         <!-- Footer content goes here -->
     </footer>
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="static\script.js"></script> <!-- Include the JavaScript file -->
     {% block extra_scripts %}{% endblock %}
 </body>
 </html>
