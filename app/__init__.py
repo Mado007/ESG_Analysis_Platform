@@ -28,4 +28,4 @@ login_manager.init_app(app)
 migrate = Migrate(app, db)
 
 # Import routes and models
-from app import routes, models
+from app import routes, models, forms

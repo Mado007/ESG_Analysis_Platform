@@ -3,11 +3,9 @@ from flask import render_template, flash, redirect, url_for
 from flask_login import login_user
 from app import app, db
 from app.models import User
-from app.forms import LoginForm 
+from app.forms import LoginForm, RegistrationForm
 import pandas as pd
 import plotly.express as px
-
- # Import the LoginForm class from the forms.py file
 
 # Index route
 @app.route('/')
@@ -37,9 +35,17 @@ def about():
     return render_template('about.html', title='About')
 
 # Register route
-@app.route('/register')
+@app.route('/register', methods=['GET', 'POST'])
 def register():
-    return render_template('register.html', title='Register')
+    form = RegistrationForm()  # Instantiate the RegistrationForm
+    if form.validate_on_submit():
+        user = User(username=form.username.data)
+        user.set_password(form.password.data)
+        db.session.add(user)
+        db.session.commit()
+        flash('Congratulations, you are now a registered user!')
+        return redirect(url_for('login'))
+    return render_template('register.html', title='Register', form=form)  # Pass the form object to the template
 
 # Login route
 @app.route('/login', methods=['GET', 'POST'])
