@@ -1,7 +1,7 @@
 # ESG Analysis Platform
 
 ## Introduction
-Welcome to the ESG Analysis Platform, a sophisticated web-based tool designed for Environmental, Social, and Governance (ESG) analysis. The platform empowers users to explore ESG metrics, visualize data trends, and make informed decisions regarding sustainability and corporate responsibility.
+Welcome to the ESG Analysis Platform, a sophisticated web-based tool designed for Environmental, Social, and Governance (ESG) analysis. The platform empowers users to explore ESG metrics, visualize data trends, and make informed decisions regarding sustainability and corporate responsibility.This project is your hint and simple start in ESG analysis.
 
 ## Project Structure
 ```bash
@@ -73,6 +73,9 @@ Welcome to the ESG Analysis Platform, a sophisticated web-based tool designed fo
 ## Contributors
 - [Mahmoud Eid](https://github.com/Mado007/)
 
+## 💰You can support me to make impact by Donating
+  [![BuyMeACoffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/Mahmoud.Madoo)
+  [![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/mado999)
 ## License
 This project is licensed under the [MIT License](LICENSE). Feel free to explore, modify, and distribute the codebase.
 
