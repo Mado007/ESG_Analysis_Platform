@@ -4,46 +4,47 @@
 Welcome to the ESG Analysis Platform, a sophisticated web-based tool designed for Environmental, Social, and Governance (ESG) analysis. The platform empowers users to explore ESG metrics, visualize data trends, and make informed decisions regarding sustainability and corporate responsibility.
 
 ## Project Structure
-.
+```bash
 ├── app
-│ ├── init.py
-│ ├── pycache
-│ │ ├── init.cpython-312.pyc
-│ │ ├── forms.cpython-312.pyc
-│ │ ├── models.cpython-312.pyc
-│ │ └── routes.cpython-312.pyc
-│ ├── dashboard.py
-│ ├── forms.py
-│ ├── models.py
-│ ├── routes.py
-│ ├── static
-│ │ ├── css
-│ │ │ ├── dashboard.css
-│ │ │ └── style.css
-│ │ └── js
-│ │ ├── dashboard.js
-│ │ └── script.js
-│ └── templates
-│ ├── base.html
-│ ├── dashboard.html
-│ ├── index.html
-│ ├── login.html
-│ └── register.html
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-312.pyc
+│   │   ├── forms.cpython-312.pyc
+│   │   ├── models.cpython-312.pyc
+│   │   └── routes.cpython-312.pyc
+│   ├── dashboard.py
+│   ├── forms.py
+│   ├── models.py
+│   ├── routes.py
+│   ├── static
+│   │   ├── css
+│   │   │   ├── dashboard.css
+│   │   │   └── style.css
+│   │   └── js
+│   │       ├── dashboard.js
+│   │       └── script.js
+│   └── templates
+│       ├── base.html
+│       ├── dashboard.html
+│       ├── index.html
+│       ├── login.html
+│       └── register.html
 ├── instance
-│ ├── app.db
-│ └── config.py
+│   ├── app.db
+│   └── config.py
 ├── migrations
-│ ├── alembic.ini
-│ ├── env.py
-│ ├── README
-│ ├── script.py.mako
-│ └── versions
-│ └── 20962569eb8a_initial_migration.py
+│   ├── alembic.ini
+│   ├── env.py
+│   ├── README
+│   ├── script.py.mako
+│   └── versions
+│       └── 20962569eb8a_initial_migration.py
 ├── venv
 ├── app.db
 ├── LICENSE
 ├── README.md
 └── requirements.txt
+```
 
 ## Key Features V1
 - **User Authentication**: Registration and login functionalities .
