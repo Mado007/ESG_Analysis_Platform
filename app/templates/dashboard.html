@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Dashboard" content="the ESG Dashboard for insights into (ESG) data.">
+    <title>ESG Dashboard</title>
+    <!-- Link any necessary CSS files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Your dashboard content goes here -->
+    <h1>Welcome to the Dashboard</h1>
+    <p>This is your dashboard page. You can add any content or data visualization here.</p>
+    <!-- Display data visualization -->
+    <div>
+        <h2>Users Count: {{ users_count }}</h2>
+        <!-- You can add more visualizations here -->
+    </div>
+    
+    <!-- Link any necessary JavaScript files -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<!-- Include your custom JavaScript file -->
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>

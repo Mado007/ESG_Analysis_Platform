@@ -6,7 +6,7 @@ from flask_migrate import Migrate
 import os
 
 # Initialize Flask app
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
 
 # Load configuration
 config_path = os.path.join(os.getcwd(), 'instance', 'config.py')

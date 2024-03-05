@@ -29,6 +29,16 @@ def index():
     # Render the index.html template with the Plotly plot embedded
     return render_template('index.html', plot=plot_html)
 
+# Dashboard route
+@app.route('/dashboard')
+def dashboard():
+    # Fetch data for visualization (you can customize this based on your requirements)
+    # For example, fetch data from your database or any external source
+    users_count = User.query.count()
+
+    # Pass the data to your dashboard template
+    return render_template('dashboard.html', title='Dashboard', users_count=users_count)
+
 # About route
 @app.route('/about')
 def about():
