@@ -73,10 +73,11 @@ Welcome to the ESG Analysis Platform, a sophisticated web-based tool designed fo
 ## Contributors
 - [Mahmoud Eid](https://github.com/Mado007/)
 
+## License
+This project is licensed under the [MIT License](LICENSE). Feel free to explore, modify, and distribute the codebase.
+For any questions or feedback, please contact us at [Mahmoud Eid](mailto:eng.mahmod.eid.elsayed@gmail.com). Thank you for using the ESG Analysis Platform!
+
 ## 💰You can support me to make impact by Donating
   [![BuyMeACoffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/Mahmoud.Madoo)
   [![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/mado999)
-## License
-This project is licensed under the [MIT License](LICENSE). Feel free to explore, modify, and distribute the codebase.
 
-For any questions or feedback, please contact us at [Mahmoud Eid](mailto:eng.mahmod.eid.elsayed@gmail.com). Thank you for using the ESG Analysis Platform!
