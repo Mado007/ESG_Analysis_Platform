@@ -5,24 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Dashboard" content="the ESG Dashboard for insights into (ESG) data.">
     <title>ESG Dashboard</title>
-    <!-- Link any necessary CSS files -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
-    <!-- Include Bootstrap CSS -->
+    <!-- Link Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Link your custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    
 </head>
 <body>
-    <!-- Your dashboard content goes here -->
-    <h1>Welcome to the Dashboard</h1>
-    <p>This is your dashboard page. You can add any content or data visualization here.</p>
-    <!-- Display data visualization -->
-    <div>
-        <h2>Users Count: {{ users_count }}</h2>
-        <!-- You can add more visualizations here -->
+    <!-- Bootstrap container for responsive layout -->
+    <div class="container">
+        <!-- Bootstrap row for header -->
+        <div class="row">
+            <div class="col-12">
+                <!-- Header -->
+                <div class="dashboard-header bg-dark text-white py-2">
+                    <h1>Welcome to the Dashboard</h1>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap row for content -->
+        <div class="row">
+            <div class="col-12">
+                <!-- Content -->
+                <div class="dashboard-content mt-3">
+                    <!-- Display data visualization -->
+                    <div id="plot">{{ fig_html|safe }}</div>
+                    
+                    <!-- Two columns for chart_div and myDiv -->
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <div id="myDiv" style="width: 50%; height: 100px;"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <div id="chart_div" style="width: 700px; height: 500px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bootstrap row for footer -->
+        <div class="row">
+            <div class="col-12">
+                <!-- Footer -->
+                <div class="dashboard-footer bg-dark text-white py-2 mt-3">
+                    <p>&copy; 2024 Mahmoud Elsayed</p>
+                </div>
+            </div>
+        </div>
     </div>
-    
-    <!-- Link any necessary JavaScript files -->
+
+    <!-- Link Plotly JavaScript library -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-<!-- Include your custom JavaScript file -->
-<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+    <!-- Include your custom JavaScript file -->
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+    
 </body>
 </html>

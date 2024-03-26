@@ -14,13 +14,15 @@
         <form method="post">
             {{ form.hidden_tag() }}
             <div class="input-group">
-                {{ form.username.label }} {{ form.username(class="form-control") }}
+                {{ form.username.label(class="form-control-label") }}
+                {{ form.username(class="form-control") }}
             </div>
             <div class="input-group">
-                {{ form.password.label }} {{ form.password(class="form-control") }}
+                {{ form.password.label(class="form-control-label") }}
+                {{ form.password(class="form-control") }}
             </div>
             <div class="input-group">
-                {{ form.remember_me() }} {{ form.remember_me.label }}
+                {{ form.remember_me(class="form-check-input") }} {{ form.remember_me.label(class="form-check-label") }}
             </div>
             <button type="submit" class="button">Sign In</button>
         </form>

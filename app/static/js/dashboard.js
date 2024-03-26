@@ -1,39 +1,81 @@
-// This function fetches data from the server and updates the dashboard with the received data
-function updateDashboard() {
-  // You can make an AJAX request to fetch data from the server
-  // For example, you can use fetch() or jQuery's $.ajax() function
+// static/dashboard.js
 
-  // For demonstration purposes, let's assume we are fetching data from a hypothetical API endpoint
-  fetch('/api/data')
-      .then(response => response.json())
-      .then(data => {
-          // Once the data is received, update the dashboard elements
-          // Here, you can update charts, tables, or any other elements on your dashboard
-          updateChart(data);
-          updateTable(data);
-      })
-      .catch(error => {
-          console.error('Error fetching data:', error);
-      });
+let intervalId;
+
+const fetchDataPeriodically = () => {
+  if (intervalId) clearInterval(intervalId);
+  fetchAndUpdateData();
+  intervalId = setInterval(fetchAndUpdateData, 5000);
+};
+
+const pageVisibilityHandler = () => {
+  if (document.visibilityState === 'visible') {
+    fetchDataPeriodically();
+  } else {
+    clearInterval(intervalId);
+  }
 }
 
-// This function updates the chart on the dashboard with the received data
-function updateChart(data) {
-  // Use the data to update the chart
-  // For example, if you're using Chart.js, you can update the chart data and labels
+const fetchAndUpdateData = async () => {
+  try {
+    const response = await fetch('/data');
+    if (!response.ok) {
+      throw new Error('Failed to fetch data');
+    }
+    const data = await response.json();
+    updateChart(data);
+    updateTable(data);
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
 }
 
-// This function updates the table on the dashboard with the received data
-function updateTable(data) {
-  // Use the data to update the table
-  // For example, you can iterate through the data and update the table rows
-}
-
-// Call the updateDashboard function when the page loads to initially populate the dashboard
-document.addEventListener('DOMContentLoaded', function () {
-  updateDashboard();
-
-  // Optionally, you can set up a timer to periodically update the dashboard
-  // For example, update the dashboard every 5 seconds
-  setInterval(updateDashboard, 5000);
+document.addEventListener('DOMContentLoaded', fetchDataPeriodically);
+document.addEventListener('visibilitychange', pageVisibilityHandler);
+document.addEventListener('pagehide', () => {
+  if (intervalId) clearInterval(intervalId);
 });
+
+google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawVisualization);
+
+      function drawVisualization() {
+        // Some raw data (not necessarily accurate)
+        var data = google.visualization.arrayToDataTable([
+          ['Month', 'China', 'United States', 'France', 'India', 'Canada', 'Average'],
+          ['2020/05',  165,      938,         522,             998,           450,      614.6],
+          ['2021/06',  135,      1300,        599,             1268,          288,      682],
+          ['2022/07',  157,      1167,        587,             807,           397,      623],
+          ['2023/08',  139,      1110,        615,             968,           215,      609.4],
+        ]);
+
+        var options = {
+          title : 'CO2 Emissions by Country',
+          vAxis: {title: 'CO2 Emissions'},
+          hAxis: {title: 'Year/Month'},
+          seriesType: 'bars',
+          series: {5: {type: 'line'}}
+        };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+      
+      // Pie Chart
+      var data = [{
+        type: "pie",
+        values: [2, 3, 4, 4, 9],
+        labels: ["China", "France", "India", "Canada", "United States"],
+        textinfo: "label+percent",
+        textposition: "outside",
+        automargin: true
+      }]
+      
+      var layout = {
+        height: 400,
+        width: 400,
+        margin: {"t": 0, "b": 0, "l": 0, "r": 0, "u": 0},
+        showlegend: false
+        }
+      
+      Plotly.newPlot('myDiv', data, layout)

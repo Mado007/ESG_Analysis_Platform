@@ -6,6 +6,7 @@
     <title>Register</title>
     <meta name="description" content="Register to access the ESG Dashboard and explore environmental, social, and governance data.">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <div class="register-container">
@@ -13,22 +14,22 @@
         <form method="post">
             {{ form.hidden_tag() }}
             <div class="input-group">
-                {{ form.username.label }} {{ form.username(class="form-control") }}
-                <!-- Display validation errors for the username field -->
+                {{ form.username.label(class="form-control-label") }} 
+                {{ form.username(class="form-control") }}
                 {% for error in form.username.errors %}
                     <span class="error">{{ error }}</span>
                 {% endfor %}
             </div>
             <div class="input-group">
-                {{ form.password.label }} {{ form.password(class="form-control") }}
-                <!-- Display validation errors for the password field -->
+                {{ form.password.label(class="form-control-label") }}
+                {{ form.password(class="form-control") }}
                 {% for error in form.password.errors %}
                     <span class="error">{{ error }}</span>
                 {% endfor %}
             </div>
             <div class="input-group">
-                {{ form.password2.label }} {{ form.password2(class="form-control") }}
-                <!-- Display validation errors for the password confirmation field -->
+                {{ form.password2.label(class="form-control-label") }} 
+                {{ form.password2(class="form-control") }}
                 {% for error in form.password2.errors %}
                     <span class="error">{{ error }}</span>
                 {% endfor %}
