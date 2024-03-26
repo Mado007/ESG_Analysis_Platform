@@ -1,12 +1,11 @@
 /* Reset some default styles */
 body {
   margin: 0;
-  font-family: Roboto;
-}
+  }
 
 /* Header styles */
 .dashboard-header {
-  background-color: #343a40 !important;
+  background-color: #343a40;
   color: #ffffff;
   padding: 20px;
   text-align: center;
@@ -28,7 +27,12 @@ body {
 }
 
 /* Card title styles */
-.dashboard-card h1, .dashboard-card h2, .dashboard-card h3, .dashboard-card h4, .dashboard-card h5, .dashboard-card h6 {
+.dashboard-card h1, 
+.dashboard-card h2, 
+.dashboard-card h3, 
+.dashboard-card h4, 
+.dashboard-card h5, 
+.dashboard-card h6 {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 10px;
@@ -41,18 +45,16 @@ body {
 
 /* Footer styles */
 .dashboard-footer {
-  background-color: #404d5a !important;
+  background-color: #404d5a;
   color: #edebf3;
   padding: 50px;
   text-align: center;
-  margin: 0;
-  margin-top: auto !important;
+  margin-top: auto;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .dashboard-header,
-  .dashboard-footer {
+  .dashboard-header, .dashboard-footer {
       padding: 15px;
   }
 
@@ -60,7 +62,8 @@ body {
       padding: 15px;
   }
 
-  .dashboard-card h1, .dashboard-card h2, .dashboard-card h3, .dashboard-card h4, .dashboard-card h5, .dashboard-card h6 {
+  .dashboard-card h1, .dashboard-card h2, .dashboard-card h3,
+  .dashboard-card h4, .dashboard-card h5, .dashboard-card h6 {
       font-size: 18px;
   }
 

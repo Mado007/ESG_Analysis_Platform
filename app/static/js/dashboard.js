@@ -19,26 +19,41 @@ const pageVisibilityHandler = () => {
 const fetchAndUpdateData = async () => {
   try {
     const response = await fetch('/data');
-    if (!response.ok) {
+    // Add check for JSON response
+    const contentType = response.headers.get("content-type");
+    if (!response.ok || !contentType || !contentType.includes("application/json")) {
       throw new Error('Failed to fetch data');
     }
     const data = await response.json();
-    updateChart(data);
-    updateTable(data);
+
+    if (!data) { // If data is empty, do not proceed.
+      throw new Error('Data is not valid or empty');
+    }
+
+    // Guard clauses for the updateChart and updateTable methods, check if they both exist and are a function
+    if (typeof updateChart === 'function') {
+      updateChart(data);
+    }
+    if (typeof updateTable === 'function') {
+      updateTable(data);
+    }
   } catch (error) {
     console.error('Error fetching data:', error);
   }
 }
 
-document.addEventListener('DOMContentLoaded', fetchDataPeriodically);
+// Amended the 'DOMContentLoaded' event target to 'window'
+window.addEventListener('DOMContentLoaded', fetchDataPeriodically);
 document.addEventListener('visibilitychange', pageVisibilityHandler);
 document.addEventListener('pagehide', () => {
   if (intervalId) clearInterval(intervalId);
 });
 
-google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawVisualization);
-
+// Do not execute chart related code if google.charts not defined
+if (typeof google !== "undefined" && typeof google.charts !== "undefined") {
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawVisualization);
+}
       function drawVisualization() {
         // Some raw data (not necessarily accurate)
         var data = google.visualization.arrayToDataTable([

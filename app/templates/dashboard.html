@@ -2,15 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- Updating meta description with unique content -->
+    <meta name="description" content="the ESG Dashboard">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="Dashboard" content="the ESG Dashboard for insights into (ESG) data.">
     <title>ESG Dashboard</title>
-    <!-- Link Bootstrap CSS -->
+
+    <!-- CSS files -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Link your custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    
 </head>
 <body>
     <!-- Bootstrap container for responsive layout -->
@@ -34,12 +33,13 @@
                     
                     <!-- Two columns for chart_div and myDiv -->
                     <div class="row mt-3">
-                        <div class="col-md-6">
-                            <div id="myDiv" style="width: 50%; height: 100px;"></div>
+                        <div class="col-sm-6">
+                          <div id="myDiv" style="width: 100%; height: 300px;"></div>
                         </div>
-                        <div class="col-md-6">
-                            <div id="chart_div" style="width: 700px; height: 500px;"></div>
+                        <div class="col-sm-6">
+                          <div id="chart_div" style="width: 50%; height: 500px;"></div>
                         </div>
+                      </div>
                     </div>
                 </div>
             </div>
@@ -55,11 +55,9 @@
             </div>
         </div>
     </div>
-
-    <!-- Link Plotly JavaScript library -->
+    <!-- Loading scripts at the end of body -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <!-- Include your custom JavaScript file -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
-    
 </body>
 </html>
