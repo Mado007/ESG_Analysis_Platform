@@ -11,7 +11,6 @@ from app.dashboard import generate_plotly_figure, esg_data_df
 from plotly.offline import plot
 import os
 
-
 bp = Blueprint('main', __name__)
 
 # Index route

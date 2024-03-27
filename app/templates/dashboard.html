@@ -6,53 +6,40 @@
     <meta name="description" content="the ESG Dashboard">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ESG Dashboard</title>
-
     <!-- CSS files -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
 </head>
 <body>
+    <!-- Header -->
+    <div class="dashboard-header bg-dark text-white py-2">
+        <h1>Welcome to the Dashboard</h1>
+    </div>
     <!-- Bootstrap container for responsive layout -->
     <div class="container">
-        <!-- Bootstrap row for header -->
-        <div class="row">
-            <div class="col-12">
-                <!-- Header -->
-                <div class="dashboard-header bg-dark text-white py-2">
-                    <h1>Welcome to the Dashboard</h1>
-                </div>
-            </div>
-        </div>
-        <!-- Bootstrap row for content -->
+                <!-- Bootstrap row for content -->
         <div class="row">
             <div class="col-12">
                 <!-- Content -->
                 <div class="dashboard-content mt-3">
                     <!-- Display data visualization -->
                     <div id="plot">{{ fig_html|safe }}</div>
-                    
                     <!-- Two columns for chart_div and myDiv -->
                     <div class="row mt-3">
                         <div class="col-sm-6">
-                          <div id="myDiv" style="width: 100%; height: 300px;"></div>
+                          <div id="myDiv" style="width: 100%; height: 500px;"></div>
                         </div>
                         <div class="col-sm-6">
-                          <div id="chart_div" style="width: 50%; height: 500px;"></div>
+                          <div id="chart_div" style="width: 100%; height: 400px;"></div>
                         </div>
                       </div>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <!-- Bootstrap row for footer -->
-        <div class="row">
-            <div class="col-12">
-                <!-- Footer -->
-                <div class="dashboard-footer bg-dark text-white py-2 mt-3">
-                    <p>&copy; 2024 Mahmoud Elsayed</p>
-                </div>
-            </div>
+        <!-- Footer -->
+        <div class="dashboard-footer bg-dark text-white py-2 mt-3">
+            <p>&copy; 2024 Mahmoud Elsayed</p>
         </div>
     </div>
     <!-- Loading scripts at the end of body -->

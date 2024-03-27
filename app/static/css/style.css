@@ -7,7 +7,6 @@
   --font-family: Arial, sans-serif;
   --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
 body {
   font-family: var(--font-family);
   background-color: var(--background-color);
@@ -15,24 +14,20 @@ body {
   padding: 0;
   
 }
-
 header, main, footer {
   text-align: center;
   margin: 0;
 }
-
 main {
   background-color: var(--secondary-color);
   padding: 20px;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
 }
-
 ul {
   list-style-type: none;
   padding: 0;
 }
-
 .button {
   background-color: var(--primary-color);
   border: none;
@@ -45,7 +40,6 @@ ul {
   cursor: pointer;
   border-radius: var(--border-radius);
 }
-
 .login-container,
 .register-container {
   margin: 40px auto;
@@ -59,25 +53,21 @@ ul {
   cursor: pointer;
 
 }
-
 .error {
   color: #ff0000;
   color: #ff3860;
   font-size: 14px;
   margin-top: 5px;
 }
-
 .input-group {
   margin-bottom: 25px;
   display: flex;
   flex-direction: column;
 }
-
 .input-group label {
   margin-bottom: 10px;
   font-weight: bold; 
 }
-
 .input-group input {
   padding: 10px;
   font-size: 16px;

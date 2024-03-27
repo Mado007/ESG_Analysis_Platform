@@ -17,7 +17,7 @@
 
   // Handler for click event
   const bindButtonClickEvent = () => {
-    alert('Button clicked!');
+    alert('Welcome and thank you for trying register in my platform 🤩');
   }
 
   // Handler for touchstart event

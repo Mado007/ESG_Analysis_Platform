@@ -1,5 +1,4 @@
 // static/dashboard.js
-
 let intervalId;
 
 const fetchDataPeriodically = () => {
