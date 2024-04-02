@@ -80,14 +80,30 @@ Welcome to the ESG Analysis Platform, a sophisticated web-based tool designed fo
 ## Setup_Instructions
 1. **Clone the Repository**: Download the repository to your local machine.
 2. **Create Virtual Environment**: Set up a virtual environment and activate it.
-3. **Install Dependencies**: Run  
+```bash
+python -m venv venv
+```
+3. **Activate the Virtual Environment**:
+
+  - On Windows:
+
+```bash
+.\venv\Scripts\activate
+```
+  - On Unix or MacOS:
+
+```bash
+source venv/bin/activate
+```
+
+4. **Install Dependencies**: Run  
 ```bash 
 pip install -r requirements.txt
 ```  
 to install necessary packages.
 
-4. **Configure Environment Variables**: Customize environment variables and database settings according to your requirements.
-5. **Run the Application**: Execute 
+5. **Configure Environment Variables**: Customize environment variables and database settings according to your requirements.
+6. **Run the Application**: Execute 
 ```bash
 flask run
 ```
